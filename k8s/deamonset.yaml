@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: resourceful
+  namespace: kube-system
+  labels:
+    k8s-app: resourceful
+spec:
+  selector:
+    matchLabels:
+      name: resourceful
+  template:
+    metadata:
+      labels:
+        name: resourceful
+    spec:
+      containers:
+      - name: k8s-resourceful
+        image: hemanthmalla/k8s_resourceful:0.1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 50051
+          hostPort: 50051
+        resources:
+          limits:
+            memory: 100Mi
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        volumeMounts:
+        - name: varrun
+          mountPath: /var/run
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - name: varrun
+        hostPath:
+          path: /var/run/

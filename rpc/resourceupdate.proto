@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package resourceupdate;
+
+option java_multiple_files = true;
+option java_package = "io.hemanth.vscale";
+option java_outer_classname = "Vscale";
+
+service Updater {
+    rpc UpdateContainerResource (UpdateRequest) returns (UpdateResponse) {}
+}
+
+message UpdateRequest {
+    string namespace = 1;
+    string pod_name = 2;
+    string container_name = 3;
+    int64 memory = 4;
+    int64 cpu = 5;
+}
+
+message UpdateResponse {
+    bool success = 1;
+    string msg = 2;
+}
