@@ -59,3 +59,16 @@ This service/wrapper is placed on all worker nodes using a deamonset.
 The CLI component then determines the host machine of a given container and routes the update request to the appropriate worker node, which is finally delegated to CRI to perform the update operation.
 
 
+#### Limitations
+
+* Memory limits can only be set to values less than the swap memory allocated for the container [https://github.com/kubernetes/kubernetes/issues/69793]
+* The machine on which CLI is executed should have routes to worker nodes.
+* kubectl and kubeconfig should be configured and available in path.
+
+
+#### TODO
+
+* Health checks for GRPC service
+* Notify kuberentes of the changes to container's resources without triggering a restart.
+
+
