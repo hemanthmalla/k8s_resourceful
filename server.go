@@ -3,8 +3,8 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/hemanthmalla/vscale/rpc"
-	rpcpb "github.com/hemanthmalla/vscale/rpc"
+	"github.com/hemanthmalla/k8s_resourceful/rpc"
+	rpcpb "github.com/hemanthmalla/k8s_resourceful/rpc"
 	"github.com/sirupsen/logrus"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"

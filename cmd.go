@@ -3,7 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	pb "github.com/hemanthmalla/vscale/rpc"
+	pb "github.com/hemanthmalla/k8s_resourceful/rpc"
 	"github.com/sirupsen/logrus"
 	"github.com/urfave/cli"
 	"golang.org/x/net/context"
