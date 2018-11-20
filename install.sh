@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+set -x
 protoc -I rpc rpc/resourceupdate.proto --go_out=plugins=grpc:rpc
 
 dep ensure
